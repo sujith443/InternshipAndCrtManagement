@@ -51,17 +51,6 @@ const Home = () => {
                 </Button>
               )}
             </Col>
-            <Col md={5} className="d-none d-md-block">
-              <img 
-                src="/assets/images/hero-bg.jpg" 
-                alt="Students working" 
-                className="img-fluid rounded shadow"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://via.placeholder.com/600x400?text=SVIT+Portal';
-                }}
-              />
-            </Col>
           </Row>
         </Container>
       </div>

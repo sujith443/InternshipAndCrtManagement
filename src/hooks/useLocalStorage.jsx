@@ -39,7 +39,9 @@ const useLocalStorage = (key, initialValue) => {
     }
   };
 
-  // Listen for changes to localStorage from other tabs/windows
+  // We'll comment out this effect for now as it might be causing render loops
+  // Only uncomment if you specifically need cross-tab synchronization
+  /*
   useEffect(() => {
     const handleStorageChange = (e) => {
       if (e.key === key) {
@@ -59,6 +61,7 @@ const useLocalStorage = (key, initialValue) => {
       window.removeEventListener('storage', handleStorageChange);
     };
   }, [key, initialValue]);
+  */
 
   return [storedValue, setValue];
 };

@@ -158,17 +158,26 @@ export const DataProvider = ({ children }) => {
     return savedCRTSessions ? JSON.parse(savedCRTSessions) : initialCRTSessions;
   });
 
-  // Save data to localStorage whenever it changes
+  // Save data to localStorage whenever it changes - with a debounce to prevent infinite loops
   useEffect(() => {
-    localStorage.setItem('students', JSON.stringify(students));
+    const saveDataTimeout = setTimeout(() => {
+      localStorage.setItem('students', JSON.stringify(students));
+    }, 300);
+    return () => clearTimeout(saveDataTimeout);
   }, [students]);
 
   useEffect(() => {
-    localStorage.setItem('internships', JSON.stringify(internships));
+    const saveDataTimeout = setTimeout(() => {
+      localStorage.setItem('internships', JSON.stringify(internships));
+    }, 300);
+    return () => clearTimeout(saveDataTimeout);
   }, [internships]);
 
   useEffect(() => {
-    localStorage.setItem('crtSessions', JSON.stringify(crtSessions));
+    const saveDataTimeout = setTimeout(() => {
+      localStorage.setItem('crtSessions', JSON.stringify(crtSessions));
+    }, 300);
+    return () => clearTimeout(saveDataTimeout);
   }, [crtSessions]);
 
   // Student related functions

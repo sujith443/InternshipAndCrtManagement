@@ -24,17 +24,7 @@ const AppNavbar = () => {
     >
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-          <img
-            src="/assets/images/svit-logo.png"
-            width="40"
-            height="40"
-            className="d-inline-block align-top me-2"
-            alt="SVIT Logo"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'https://via.placeholder.com/40?text=SVIT';
-            }}
-          />
+          
           <span className="fw-bold">SVIT Internship & CRT Portal</span>
         </Navbar.Brand>
         
